@@ -16,7 +16,10 @@ class Solution
             return;
         }
         for(auto child: adj[vertex]){
-            if(vis[child]) continue;
+            if(vis[child]) {
+		// If the child node is visited , then we are not going to visit it again, which ensures that, any node can be visited at most once only.
+		continue;
+	    }
             dfs(child, adj, vis, count, N);
         }
         vis[vertex]=0;
